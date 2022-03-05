@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.example.qnavigation.dao.UserMapper">
+
+    <select id="getInfo" parameterType="String" resultType="com.example.qnavigation.bean.UserBean">
+        SELECT * FROM user_tbl WHERE username = #{name} AND password = #{password}
+    </select>
+   <select id="queryAllUserExId" parameterType="int" resultType="com.example.qnavigation.bean.UserBean"><!-- //查找朋友-->
+        SELECT * FROM user_tbl WHERE user_id NOT in (#{user_id})
+    </select>
+    <update id="updateBusy" parameterType="int">
+        update user_tbl set busy = #{busy} where user_id= #{user_id}
+    </update>
+
+</mapper>

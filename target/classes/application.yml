@@ -1,0 +1,16 @@
+server:
+  servlet:
+    context-path: /qnavigation
+
+spring:
+  datasource:
+    name: qnavigation
+    url: jdbc:mysql://localhost:3306/qnavigation #url
+    username: root
+    password: root  #sd
+    driver-class-name: com.mysql.jdbc.Driver
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml
+  type-aliases-package: com.example.qnavigation.bean #
+
